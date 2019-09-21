@@ -4,39 +4,43 @@
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
     <body style="background-color: #293133">
-        <h1>Tablero Compartido</h1>
+        <h1 class="col-sm-12" style="color: white; text-align: center">--Tablero Compartido--</h1>
         <div id="output"></div>
-        <table>
-            <tr>
-                <td>
-                    <canvas id="myCanvas" width="400" height="400"
+        <table class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+            <tr class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <td class="col-sm-12 col-md-12 col-xs-12 col-lg-12" style="text-align: center">
+                    <canvas id="myCanvas" width="1200" height="400"
                     style="border:2px solid red; background-color: white;"></canvas>
                 </td>
-                <td>
+            </tr>
+            <td>
                     <form name="inputForm">
                         <table>
                             <tr>
-                                <th>Color</th>
-                                <td><input type="radio" name="color" value="#FF0000" checked>Rojo</td>
-                                <td><input type="radio" name="color" value="#0000FF" >Azul</td>
-                                <td><input type="radio" name="color" value="#FF9900" >Naranja</td>
-                                <td><input type="radio" name="color" value="#33CC33" >Verde</td>
+                                <th><h3 style="color: white">Color:</h3></th>
+                                <td><input type="radio" name="color" value="#FF0000" checked><span style="color: red">Rojo</span></td>
+                                <td><input type="radio" name="color" value="#0000FF" ><span style="color: blue">Azul</span></td>
+                                <td><input type="radio" name="color" value="#FF9900" ><span style="color: orange">Naranja</span></td>
+                                <td><input type="radio" name="color" value="#33CC33" ><span style="color: green">Verde</span></td>
                                 <td><input type="radio" name="color" value="#FFFFFF" style="visibility:hidden"></td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="button" value="Clear" id="clearBtn">
+                                    <input type="button" value="Clear" class="btn btn-danger btn-block" id="clearBtn">
                                 </td>
+                            </tr>
+                            <tr>
                                 <td>
-                                    <input type="button" value="download" id="downloadBtn">
+                                    <input type="button" value="download" class="btn btn-success btn-block" id="downloadBtn">
                                 </td>
                             </tr>
                         </table>
                     </form>
                 </td>
-            </tr>
         </table>
         <script type="text/javascript" src="websocket.js"></script>
         <script type="text/javascript" src="tablero.js"></script>

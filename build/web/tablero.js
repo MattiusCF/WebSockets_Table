@@ -80,7 +80,8 @@ function defineImage(evt) {
         sendText(json);
     }
 }
-function clearTable(evt){
+function clearTable(){
+    //Envia un json con la orden para limpiar el tablero
     var json = JSON.stringify({
         "shape": "square",
         "color": "#000000",
@@ -100,12 +101,12 @@ function clearTable(evt){
 function drawImageText(image) {
     var json = JSON.parse(image);
     context.fillStyle = json.color;
-    context.beginPath(); // comenzamos a dibujar
-    context.moveTo(json.coords.x, json.coords.y); // ubicamos el cursor en la posicion (10,10)
-    context.lineTo(json.coordsNext.x,json.coordsNext.y);
+    context.beginPath(); // inicia el dibujo
+    context.moveTo(json.coords.x, json.coords.y); // Ubica el cursor del canva donde en el punto inicial
+    context.lineTo(json.coordsNext.x,json.coordsNext.y); // Crea una linea hasta el punto final
     context.strokeStyle = json.color; // color de la linea
-    context.stroke(); // dibujamos la linea
-    if(json.clr=="true"){
+    context.stroke(); // muestra la linea en el canva
+    if(json.clr=="true"){ //Si el json es para limpiar el tablero, borra todo
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
 }
