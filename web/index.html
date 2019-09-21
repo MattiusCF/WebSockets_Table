@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body style="background-color: #293133">
+        <h1>Tablero Compartido</h1>
+        <div id="output"></div>
+        <table>
+            <tr>
+                <td>
+                    <canvas id="myCanvas" width="400" height="400"
+                    style="border:2px solid red; background-color: white;"></canvas>
+                </td>
+                <td>
+                    <form name="inputForm">
+                        <table>
+                            <tr>
+                                <th>Color</th>
+                                <td><input type="radio" name="color" value="#FF0000" checked>Rojo</td>
+                                <td><input type="radio" name="color" value="#0000FF" >Azul</td>
+                                <td><input type="radio" name="color" value="#FF9900" >Naranja</td>
+                                <td><input type="radio" name="color" value="#33CC33" >Verde</td>
+                                <td><input type="radio" name="color" value="#FFFFFF" style="visibility:hidden"></td>
+                            </tr>
+                            <tr>
+                                <th>Forma</th>
+                                <td><input type="radio" name="shape" value="square" checked>Cuadrado</td>
+                                <td><input type="radio" name="shape" value="circle" >Circulo</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="button" value="Clear" id="clearBtn">
+                                </td>
+                                <td>
+                                    <input type="button" value="download" id="downloadBtn">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript" src="websocket.js"></script>
+        <script type="text/javascript" src="tablero.js"></script>
+    </body>
+</html>
