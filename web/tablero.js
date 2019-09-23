@@ -35,10 +35,14 @@ function getCoords(evt){
 //Funcion para descargar la imagen
 function downloadImage(){
     //convierte el canva en una imagen
-    var dato = canvas.toDataURL("image/png");
+    var imagen = canvas.toDataURL("image/jpg");
     //cambia el formato para que el navegador la descargue automaticamente
-    dato = dato.replace("image/png", "image/octet-stream");
-    document.location.href = dato;
+    var dLink=document.createElement('a');
+    dLink.download="tablero";
+    dLink.href=imagen;
+    document.body.appendChild(dLink);
+    dLink.click();
+    document.body.removeChild(dLink);
 }
 //Funcion que toma las coordenadas x y y
 function getCurrentPos(evt) {
